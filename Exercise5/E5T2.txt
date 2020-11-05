@@ -1,0 +1,18 @@
+identify tools that will allow you to do the following: a. Scan infrastructure as code templates. b. Scan AMI’s or containers for OS vulnerabilities. c. Scan an AWS environment for cloud configuration vulnerabilities.
+
+
+1. Scan infrastructure as code templates.
+         Terrascan - Use of SSL/TLS and proper configuration
+2. Scan AMI’s or containers for OS vulnerabilities.
+         Cloud Container attack tool(CCAT) - Cloud Container Attack Tool (CCAT) is a tool for testing security of container environments
+            Example scenario to demonstrate the usage of CCAT:
+Starting with compromised AWS credentials, the attacker enumerates and explores ECR repositories.
+Then, the attacker found that they use NGINX Docker image and pulled that Docker image from ECR.
+Furthermore, the attacker creates a reverse shell backdoor into the target Docker image. Finally, the attacker pushes the backdoored Docker image to ECR.
+
+3. Scan infrastructure as code templates.
+        - Checkov
+            Checkov is a static code analysis tool for infrastructure-as-code. It scans cloud infrastructure managed in Terraform, Cloudformation, Kubernetes, Arm templates or Serverless Framework and detects misconfigurations.
+4. Scan an AWS environment for cloud configuration vulnerabilities.
+         AWS SecurityHub
+            S3 buckets with public write or read permissions

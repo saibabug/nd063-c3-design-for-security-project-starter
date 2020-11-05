@@ -1,0 +1,14 @@
+Poor security practices:
+1. as per c3-app.yml all actions are allowed by application server on all s3 buckets.
+This is a poor security practice as application server now has access to all s3 buckets and can delete update as well along with read access
+This can be fixed by following least privilege principle
+
+2. Public and private subnet network ACL rules allow all traffic on all ports from all ports.
+The Web Service Instance is in the public subnet, has port 5000 open to the internet.
+HTTPS port 443 is not open
+Instance can be in private subnet to avoid exposed to internet and use port 443
+and only allow communication on port 5000 from the AppLoadBalancerSG.
+The DefaultPrivateRoute1 and DefaultPrivateRoute2 tables have DestinationCidrBlock: 0.0.0.0/0
+Allowing incoming access by opening up ports for 0.0.0.0/0 in security groups is the most common mistake
+made by professionals when provisioning resources.Users end up opening their cloud networks and exposing their cloud
+resources and data to outside threats.
